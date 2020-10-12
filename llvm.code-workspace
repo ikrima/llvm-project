@@ -1,0 +1,56 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		// "search.exclude": {
+		//   "build": true
+		// },
+		"cmake.sourceDirectory": "${workspaceFolder}/llvm",
+		// "cmake.cacheInit": [
+		//   "../.vscode/cacheinit.cmake"
+		// ],
+		"cmake.preferredGenerators": [
+			"Ninja"
+		],
+		"cmake.generator": "Ninja",
+		"cmake.configureSettings": {
+			"LLVM_ENABLE_PROJECTS": [
+				"clang",
+				"clang-tools-extra",
+				"compiler-rt",
+				// "libc",
+				// "libcxx",
+				// "libcxxabi",
+				// "libunwind",
+				// "polly",
+				// "pstl",
+
+				"lld",
+
+				"mlir",
+			],
+			"LLVM_TARGET_ARCH": "AArch64",
+			"LLVM_TARGETS_TO_BUILD": "AArch64",
+			"LLVM_OPTIMIZED_TABLEGEN": true,
+			// "LLVM_ENABLE_LLD": true,
+			"LLVM_ENABLE_ASSERTIONS": true,
+			"LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
+
+			"MLIR_TABLEGEN": "mlir-tblgen.exe",
+
+			// "LLVM_BUILD_EXAMPLES": "ON",
+
+			// "MLIR_INCLUDE_DOCS": false,
+			// "CLANG_INCLUDE_DOCS": false,
+			// "CLANG_TOOLS_EXTRA_INCLUDE_DOCS": false,
+			// "LLVM_INCLUDE_DOCS": false,
+			// "LLVM_COMPILER_JOBS":             "28"                                                                                     ,
+			// "LLVM_PARALLEL_COMPILE_JOBS":     "28",
+			// "LLVM_PARALLEL_LINK_JOBS":        "28",
+		},
+		"cmake.buildBeforeRun": false
+	}
+}
