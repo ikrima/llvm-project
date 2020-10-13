@@ -1,0 +1,10 @@
+﻿{
+  "configurations": [
+    {
+      "name": "Debug",
+      "cacheRoot": "D:/ikrima/src/pubrepos/llvm-project/build/Debug",
+      "inheritEnvironments": [],
+      "variables": []
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "toych2",
+      "name": "cmake launch",
       "type": "cppvsdbg",
       "request": "launch",
       // Resolved by CMake Tools:
@@ -22,6 +22,19 @@
         },
       ],
       "externalConsole": false
+    },
+    {
+      "name": "kaleidoscope",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "D:\\ikrima\\src\\pubrepos\\llvm-project\\build\\Debug\\bin\\Kaleidoscope-Ch8.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "externalConsole": true,
+      "logging": {
+        "engineLogging": true
+      }
     }
   ]
 }

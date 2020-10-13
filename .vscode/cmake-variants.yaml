@@ -1,0 +1,22 @@
+buildType:
+  default: debug
+  choices:
+    debug:
+      short: Debug
+      long: Emit debug information
+      buildType: Debug
+      settings:
+        LLVM_ENABLE_ASSERTIONS: true
+    reldeb:
+      short: RelDeb
+      long: Release with dbg
+      buildType: RelWithDebInfo
+      settings:
+        LLVM_ENABLE_ASSERTIONS: true
+    release:
+      short: Release
+      long: Optimize generated code
+      buildType: Release
+      settings:
+        LLVM_ENABLE_ASSERTIONS: true
+        LLVM_ENABLE_PDB: true

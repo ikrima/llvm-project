@@ -21,23 +21,25 @@
 				"clang",
 				"clang-tools-extra",
 				"compiler-rt",
-				// "libc",
-				// "libcxx",
-				// "libcxxabi",
-				// "libunwind",
+				"libc",
+				"libcxx",
+				"libcxxabi",
+				"libunwind",
 				// "polly",
 				// "pstl",
 
 				"lld",
+				// "lldb",
 
 				"mlir",
 			],
-			"LLVM_TARGET_ARCH": "AArch64",
-			"LLVM_TARGETS_TO_BUILD": "AArch64",
+			// "LLVM_TARGET_ARCH": "AArch64",
+			// "LLVM_TARGETS_TO_BUILD": "all",
 			"LLVM_OPTIMIZED_TABLEGEN": true,
 			// "LLVM_ENABLE_LLD": true,
 			"LLVM_ENABLE_ASSERTIONS": true,
 			"LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
+			"MSVC_DIA_SDK_DIR": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK",
 
 			"MLIR_TABLEGEN": "mlir-tblgen.exe",
 
@@ -51,6 +53,8 @@
 			// "LLVM_PARALLEL_COMPILE_JOBS":     "28",
 			// "LLVM_PARALLEL_LINK_JOBS":        "28",
 		},
-		"cmake.buildBeforeRun": false
+		"cmake.buildBeforeRun": false,
+		"cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+		"cmake.installPrefix": "${workspaceFolder}/build/inst-${variant:buildType}",
 	}
 }
