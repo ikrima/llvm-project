@@ -33,15 +33,14 @@
 
 				"mlir",
 			],
-			// "LLVM_TARGET_ARCH": "AArch64",
-			// "LLVM_TARGETS_TO_BUILD": "all",
 			"LLVM_OPTIMIZED_TABLEGEN": true,
+			// "LLVM_TARGET_ARCH": "host",
+			"LLVM_TARGETS_TO_BUILD": "AArch64;X86",
 			// "LLVM_ENABLE_LLD": true,
-			"LLVM_ENABLE_ASSERTIONS": true,
 			"LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
 			"MSVC_DIA_SDK_DIR": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK",
 
-			"MLIR_TABLEGEN": "mlir-tblgen.exe",
+			// "MLIR_TABLEGEN": "mlir-tblgen.exe",
 
 			// "LLVM_BUILD_EXAMPLES": "ON",
 
