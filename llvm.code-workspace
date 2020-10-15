@@ -5,9 +5,9 @@
 		}
 	],
 	"settings": {
-		// "search.exclude": {
-		//   "build": true
-		// },
+		"search.exclude": {
+		  "instl": true
+		},
 		"cmake.sourceDirectory": "${workspaceFolder}/llvm",
 		// "cmake.cacheInit": [
 		//   "../.vscode/cacheinit.cmake"
@@ -54,6 +54,6 @@
 		},
 		"cmake.buildBeforeRun": false,
 		"cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
-		"cmake.installPrefix": "${workspaceFolder}/build/inst-${variant:buildType}",
+		"cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
 	}
 }

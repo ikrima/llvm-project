@@ -21,3 +21,17 @@ buildType:
       # settings:
       #   LLVM_ENABLE_ASSERTIONS: true
       #   LLVM_ENABLE_PDB: true
+
+docs:
+  default: docsoff
+  choices:
+    docsoff:
+      short: docsoff
+      settings:
+        LLVM_ENABLE_DOXYGEN: false
+    docsmlir:
+      short: docsmlir
+      settings:
+        LLVM_ENABLE_DOXYGEN: true
+        MLIR_INCLUDE_DOCS: true
+        LLVM_ENABLE_PROJECTS: ["mlir", "mlir-doc","doxygen-mlir" ]
