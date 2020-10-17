@@ -17,22 +17,8 @@
 		],
 		"cmake.generator": "Ninja",
 		"cmake.configureSettings": {
-			"LLVM_ENABLE_PROJECTS": [
-				"clang",
-				"clang-tools-extra",
-				"compiler-rt",
-				"libc",
-				"libcxx",
-				"libcxxabi",
-				"libunwind",
-				// "polly",
-				// "pstl",
-
-				"lld",
-				// "lldb",
-
-				"mlir",
-			],
+			// "CMAKE_CXX_FLAGS": "/D_ITERATOR_DEBUG_LEVEL=0",
+			// "CMAKE_CXX_FLAGS_DEBUG": "/D_ITERATOR_DEBUG_LEVEL=0",
 			"LLVM_OPTIMIZED_TABLEGEN": true,
 			// "LLVM_TARGET_ARCH": "host",
 			"LLVM_TARGETS_TO_BUILD": "AArch64;X86",
@@ -53,7 +39,7 @@
 			// "LLVM_PARALLEL_LINK_JOBS":        "28",
 		},
 		"cmake.buildBeforeRun": false,
-		"cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+		"cmake.buildDirectory": "${workspaceFolder}/bld/${variant:buildType}",
 		"cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
 	}
 }

@@ -22,6 +22,36 @@ buildType:
       #   LLVM_ENABLE_ASSERTIONS: true
       #   LLVM_ENABLE_PDB: true
 
+projects:
+  default: mlir
+  choices:
+    mlir:
+      short: mlir
+      settings:
+        LLVM_ENABLE_PROJECTS: mlir
+    lite:
+      short: lite
+      settings:
+        LLVM_ENABLE_PROJECTS: ["mlir", "clang"]
+    full:
+      short: full
+      settings:
+        LLVM_ENABLE_PROJECTS:
+          [
+            "mlir",
+            "clang",
+            "clang-tools-extra",
+            "compiler-rt",
+            "libc",
+            "libcxx",
+            "libcxxabi",
+            "libunwind",
+            "polly",
+            "pstl",
+            "lld",
+            "lldb",
+          ]
+
 docs:
   default: docsoff
   choices:
@@ -34,4 +64,4 @@ docs:
       settings:
         LLVM_ENABLE_DOXYGEN: true
         MLIR_INCLUDE_DOCS: true
-        LLVM_ENABLE_PROJECTS: ["mlir", "mlir-doc","doxygen-mlir" ]
+        LLVM_ENABLE_PROJECTS: ["mlir", "mlir-doc", "doxygen-mlir"]
