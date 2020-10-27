@@ -42,5 +42,18 @@
 		"cmake.buildBeforeRun": false,
 		"cmake.buildDirectory": "${workspaceFolder}/bld/${variant:buildType}",
 		"cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#557c9b",
+			"activityBar.activeBorder": "#673852",
+			"activityBar.background": "#557c9b",
+			"activityBar.foreground": "#e7e7e7",
+			"activityBar.inactiveForeground": "#e7e7e799",
+			"activityBarBadge.background": "#673852",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"statusBar.background": "#557c9b",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#7295b1"
+		},
+		"peacock.color": "#557c9b",
 	}
 }
