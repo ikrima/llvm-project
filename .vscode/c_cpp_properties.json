@@ -11,11 +11,11 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.19041.0",
-            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.26.28801/bin/Hostx64/x64/cl.exe",
+            "compilerPath": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "msvc-x64",
-            "compileCommands": "build/Debug/compile_commands.json",
+            "compileCommands": "bld/dbg/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
