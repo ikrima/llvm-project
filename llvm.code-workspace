@@ -40,7 +40,7 @@
 			// "LLVM_PARALLEL_LINK_JOBS":        "28",
 		},
 		"cmake.buildBeforeRun": false,
-		"cmake.buildDirectory": "${workspaceFolder}/bld/${variant:buildType}",
+		"cmake.buildDirectory": "${workspaceFolder}/${variant:buildType}",
 		"cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
 		"workbench.colorCustomizations": {
 			"activityBar.activeBackground": "#557c9b",
