@@ -16,6 +16,7 @@
 			"Ninja"
 		],
 		"cmake.generator": "Ninja",
+		"cmake.configureOnOpen": true,
 		"cmake.configureSettings": {
 			// "CMAKE_CXX_FLAGS": "/D_ITERATOR_DEBUG_LEVEL=0",
 			// "CMAKE_CXX_FLAGS_DEBUG": "/D_ITERATOR_DEBUG_LEVEL=0",
