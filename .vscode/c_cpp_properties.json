@@ -14,7 +14,7 @@
             "compilerPath": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "${default}",
+            "intelliSenseMode": "clang-x64",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
