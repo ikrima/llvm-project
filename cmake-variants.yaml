@@ -9,11 +9,13 @@ buildType:
         LLVM_ENABLE_ASSERTIONS: true
     reldeb:
       short: reldeb
-      long: RelWithDebInfo
-      buildType: RelWithDebInfo
+      long: Release build but emit pdb
+      buildType: Release
       settings:
         LLVM_ENABLE_ASSERTIONS: true
         LLVM_ENABLE_PDB: true
+        # CMAKE_C_FLAGS_RELWITHDEBINFO: "/Zi /O2 /Ob1 /MD /D_ITERATOR_DEBUG_LEVEL=0"
+        # CMAKE_CXX_FLAGS_RELWITHDEBINFO: "/MD /Zi /O2 /Ob1 /D_ITERATOR_DEBUG_LEVEL=0"
     rel:
       short: rel
       long: Optimized with assertions and dbg
