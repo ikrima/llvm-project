@@ -283,7 +283,7 @@ void PatternEmitter::emitNativeCodeMatch(DagNode tree, StringRef opName,
   }
 
   auto nativeCodeCall = std::string(tgfmt(
-      fmt, &fmtCtx.addSubst("_loc", locToUse).withSelf(opName.str()), capture));
+      fmt, &fmtCtx.addSubst("_loc", locToUse).withSelf(opName.str()), ArrayRef<std::string>(capture)));
 
   os << "if (failed(" << nativeCodeCall << ")) return ::mlir::failure();\n";
 
@@ -943,7 +943,7 @@ std::string PatternEmitter::handleReplaceWithNativeCodeCall(DagNode tree,
                             << " replacement: " << attrs[i] << "\n");
   }
 
-  std::string symbol = tgfmt(fmt, &fmtCtx.addSubst("_loc", locToUse), attrs);
+  std::string symbol = tgfmt(fmt, &fmtCtx.addSubst("_loc", locToUse), ArrayRef<std::string>(attrs));
   if (!tree.getSymbol().empty()) {
     os << formatv("auto {0} = {1};\n", tree.getSymbol(), symbol);
     symbol = tree.getSymbol().str();
