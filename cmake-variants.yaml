@@ -6,12 +6,14 @@ buildType:
       long: Emit debug information
       buildType: Debug
       settings:
+        LLVM_OPTIMIZED_TABLEGEN: true
         LLVM_ENABLE_ASSERTIONS: true
     reldeb:
       short: reldeb
       long: Release build but emit pdb
       buildType: Release
       settings:
+        LLVM_OPTIMIZED_TABLEGEN: true
         LLVM_ENABLE_ASSERTIONS: true
         LLVM_ENABLE_PDB: true
         # CMAKE_C_FLAGS_RELWITHDEBINFO: "/Zi /O2 /Ob1 /MD /D_ITERATOR_DEBUG_LEVEL=0"
@@ -20,7 +22,8 @@ buildType:
       short: rel
       long: Optimized with assertions and dbg
       buildType: Release
-      # settings:
+      settings:
+        LLVM_OPTIMIZED_TABLEGEN: true
       #   LLVM_ENABLE_ASSERTIONS: true
       #   LLVM_ENABLE_PDB: true
 

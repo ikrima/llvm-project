@@ -2,7 +2,7 @@
   "configurations": [
     {
       "name": "Debug",
-      "cacheRoot": "D:/ikrima/src/pubrepos/llvm-project/build/Debug",
+      "cacheRoot": "${projectDir}/build/Debug",
       "inheritEnvironments": [],
       "variables": []
     }

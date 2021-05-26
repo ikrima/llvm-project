@@ -1,61 +1,61 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"search.exclude": {
-		  "instl": true
-		},
-		"cmake.sourceDirectory": "${workspaceFolder}/llvm",
-		// "cmake.cacheInit": [
-		//   "../.vscode/cacheinit.cmake"
-		// ],
-		"cmake.preferredGenerators": [
-			"Ninja"
-		],
-		"cmake.generator": "Ninja",
-		"cmake.configureOnOpen": true,
-		"cmake.configureSettings": {
-			// "CMAKE_CXX_FLAGS": "/D_ITERATOR_DEBUG_LEVEL=0",
-			// "CMAKE_CXX_FLAGS_DEBUG": "/D_ITERATOR_DEBUG_LEVEL=0",
-			"LLVM_OPTIMIZED_TABLEGEN": true,
-			// "LLVM_TARGET_ARCH": "host",
-			"LLVM_TARGETS_TO_BUILD": ["AArch64","X86"],
-			// "LLVM_ENABLE_LLD": true,
-			// "CMAKE_RC_COMPILER": "D:/ikrima/src/pubrepos/llvm-11.0.0/bin/llvm-rc.exe",
-			"LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
-			"MSVC_DIA_SDK_DIR": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK",
-
-			// "MLIR_TABLEGEN": "mlir-tblgen.exe",
-
-			// "LLVM_BUILD_EXAMPLES": "ON",
-
-			// "MLIR_INCLUDE_DOCS": false,
-			// "CLANG_INCLUDE_DOCS": false,
-			// "CLANG_TOOLS_EXTRA_INCLUDE_DOCS": false,
-			// "LLVM_INCLUDE_DOCS": false,
-			// "LLVM_COMPILER_JOBS":             "28",
-			// "LLVM_PARALLEL_COMPILE_JOBS":     "28",
-			// "LLVM_PARALLEL_LINK_JOBS":        "28",
-		},
-		"cmake.buildBeforeRun": false,
-		"cmake.buildDirectory": "${workspaceFolder}/${variant:buildType}",
-		"cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
-		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
-		"workbench.colorCustomizations": {
-			"activityBar.activeBackground": "#557c9b",
-			"activityBar.activeBorder": "#673852",
-			"activityBar.background": "#557c9b",
-			"activityBar.foreground": "#e7e7e7",
-			"activityBar.inactiveForeground": "#e7e7e799",
-			"activityBarBadge.background": "#673852",
-			"activityBarBadge.foreground": "#e7e7e7",
-			"statusBar.background": "#557c9b",
-			"statusBar.foreground": "#e7e7e7",
-			"statusBarItem.hoverBackground": "#7295b1"
-		},
-		"peacock.color": "#557c9b",
-	}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "search.exclude": {
+      "instl": true
+    },
+    // "cmake.cacheInit": [
+    //   "../.vscode/cacheinit.cmake"
+    // ],
+    "cmake.sourceDirectory": "${workspaceFolder}/llvm",
+    "cmake.preferredGenerators": [
+      "Ninja"
+    ],
+    "cmake.generator": "Ninja",
+    "cmake.configureOnOpen": false,
+    "cmake.configureSettings": {
+      // "CMAKE_CXX_FLAGS": "/D_ITERATOR_DEBUG_LEVEL=0",
+      // "CMAKE_CXX_FLAGS_DEBUG": "/D_ITERATOR_DEBUG_LEVEL=0",
+      // "LLVM_TARGET_ARCH": "host",
+      "LLVM_TARGETS_TO_BUILD": [
+        "AArch64",
+        "X86"
+      ],
+      "LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
+      "MSVC_DIA_SDK_DIR": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK",
+      // "LLVM_OPTIMIZED_TABLEGEN": true,
+      // "LLVM_ENABLE_LLD": true,
+      // "CMAKE_RC_COMPILER": "${env:EDEV_LLVM_INSTLDIR}/bin/llvm-rc.exe",
+      // "MLIR_TABLEGEN": "mlir-tblgen.exe",
+      // "LLVM_BUILD_EXAMPLES": "ON",
+      // "MLIR_INCLUDE_DOCS": false,
+      // "CLANG_INCLUDE_DOCS": false,
+      // "CLANG_TOOLS_EXTRA_INCLUDE_DOCS": false,
+      // "LLVM_INCLUDE_DOCS": false,
+      // "LLVM_COMPILER_JOBS":             "28",
+      // "LLVM_PARALLEL_COMPILE_JOBS":     "28",
+      // "LLVM_PARALLEL_LINK_JOBS":        "28",
+    },
+    "cmake.buildBeforeRun": false,
+    "cmake.buildDirectory": "${workspaceFolder}/${variant:buildType}",
+    "cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
+    // Peacock colors
+    "peacock.color": "#557c9b",
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#557c9b",
+      "activityBar.activeBorder": "#673852",
+      "activityBar.background": "#557c9b",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#673852",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "statusBar.background": "#557c9b",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#7295b1"
+    },
+  }
 }
