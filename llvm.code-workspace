@@ -12,18 +12,23 @@
     //   "../.vscode/cacheinit.cmake"
     // ],
     "cmake.sourceDirectory": "${workspaceFolder}/llvm",
-    "cmake.preferredGenerators": [
-      "Ninja"
-    ],
     "cmake.generator": "Ninja",
     "cmake.configureOnOpen": false,
     "cmake.configureSettings": {
+      // Vcpkg Integration (Mainly for building ZLIB)
+      // "CMAKE_TOOLCHAIN_FILE": "${env:EDEV_VCPKGDIR}/scripts/buildsystems/vcpkg.cmake",
+      // "VCPKG_TARGET_TRIPLET": "x64-windows-llvm",
+
       // "CMAKE_CXX_FLAGS": "/D_ITERATOR_DEBUG_LEVEL=0",
       // "CMAKE_CXX_FLAGS_DEBUG": "/D_ITERATOR_DEBUG_LEVEL=0",
       // "LLVM_TARGET_ARCH": "host",
+      "ZLIB_INCLUDE_DIR":     "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/include",
+      "ZLIB_LIBRARY_RELEASE": "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/lib/zlib.lib",
+      "ZLIB_LIBRARY_DEBUG":   "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/debug/lib/zlibd.lib",
       "LLVM_TARGETS_TO_BUILD": [
-        "AArch64",
-        "X86"
+        "host",
+        "X86",
+        "X86_X64",
       ],
       "LLVM_LIT_TOOLS_DIR": "C:/Program Files/Git/usr/bin",
       "MSVC_DIA_SDK_DIR": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK",
@@ -41,8 +46,9 @@
       // "LLVM_PARALLEL_LINK_JOBS":        "28",
     },
     "cmake.buildBeforeRun": false,
-    "cmake.buildDirectory": "${workspaceFolder}/${variant:buildType}",
+    "cmake.buildDirectory": "${workspaceFolder}/build/${variant:buildType}",
     "cmake.installPrefix": "${workspaceFolder}/instl/${variant:buildType}",
+
     // Peacock colors
     "peacock.color": "#557c9b",
     "workbench.colorCustomizations": {

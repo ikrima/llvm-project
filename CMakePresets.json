@@ -1,0 +1,104 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "compiler-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZLIB_INCLUDE_DIR":      "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/include",
+        "ZLIB_LIBRARY_RELEASE":  "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/lib/zlib.lib",
+        "ZLIB_LIBRARY_DEBUG":    "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/debug/lib/zlibd.lib",
+        "LLVM_TARGETS_TO_BUILD": "X86_64",
+        "LLVM_LIT_TOOLS_DIR":    "C:/Program Files/Git/usr/bin",
+        "MSVC_DIA_SDK_DIR":      "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK"
+      }
+    },
+
+    {
+      "name": "compiler-clangcl",
+      "hidden": true,
+      "inherits": ["compiler-base"],
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [ "Windows" ],
+          "intelliSenseMode": "windows-clang-x64"
+        }
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+       },
+      "toolset": {
+        "value": "x64",
+        "strategy": "external"
+       },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe"
+      }
+    },
+
+    {
+      "name": "bld-dbg",
+      "description": "Emit debug information",
+      "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/dbg",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true }
+    },
+    {
+      "name": "bld-reldeb",
+      "description": "Release build with assertions and emit pdb",
+      "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/reldeb",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true, "LLVM_ENABLE_PDB": true }
+    },
+    {
+      "name": "bld-rel",
+      "description": "Release build",
+      "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/rel",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true }
+    },
+
+    { "name": "proj-mlir",      "hidden": true, "cacheVariables": { "LLVM_ENABLE_PROJECTS": "mlir"                                                                                          } },
+    { "name": "proj-mlir-lite", "hidden": true, "cacheVariables": { "LLVM_ENABLE_PROJECTS": "mlir;clang"                                                                                    } },
+    { "name": "proj-mlir-full", "hidden": true, "cacheVariables": { "LLVM_ENABLE_PROJECTS": "mlir;clang;clang-tools-extra;compiler-rt;libc;libcxx;libcxxabi;libunwind;polly;pstl;lld;lldb;" } },
+    { "name": "proj-docsoff",   "hidden": true, "cacheVariables": { "LLVM_ENABLE_DOXYGEN": false                                                                                            } },
+    { "name": "proj-docsmlir",  "hidden": true, "cacheVariables": { "LLVM_ENABLE_DOXYGEN": true, "LLVM_ENABLE_PROJECTS": "mlir;mlir-doc;doxygen-mlir"                                       } },
+
+    { "name": "clangcl-dbg-mlir",    "inherits": [ "compiler-clangcl", "bld-dbg",    "proj-mlir" ] },
+    { "name": "clangcl-reldeb-mlir", "inherits": [ "compiler-clangcl", "bld-reldeb", "proj-mlir" ] }
+
+  ],
+
+  "buildPresets": [
+    {
+      "name": "clangcl-dbg-mlir",
+      "configurePreset": "clangcl-dbg-mlir",
+      "inheritConfigureEnvironment": true
+    },
+
+    {
+      "name": "core-build",
+      "description": "Inherits environment from base configurePreset",
+      "configurePreset": "base",
+      "hidden": true,
+      "inheritConfigureEnvironment": true
+    },
+    {
+      "name": "clean-build",
+      "description": "Clean before build (--clean-first)",
+      "configurePreset": "x86-windows",
+      "inherits": "core-build",
+      "cleanFirst": true
+    },
+    {
+      "name": "verbose-build",
+      "description": "Passes -v to Ninja",
+      "configurePreset": "x86-windows",
+      "inherits": "core-build",
+      "nativeToolOptions": [ "-v" ]
+    }
+  ]
+}
