@@ -9,7 +9,7 @@
         "ZLIB_INCLUDE_DIR":      "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/include",
         "ZLIB_LIBRARY_RELEASE":  "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/lib/zlib.lib",
         "ZLIB_LIBRARY_DEBUG":    "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/debug/lib/zlibd.lib",
-        "LLVM_TARGETS_TO_BUILD": "X86_64",
+        "LLVM_TARGETS_TO_BUILD": "host;X86",
         "LLVM_LIT_TOOLS_DIR":    "C:/Program Files/Git/usr/bin",
         "MSVC_DIA_SDK_DIR":      "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK"
       }
