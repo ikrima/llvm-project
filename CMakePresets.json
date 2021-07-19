@@ -5,10 +5,13 @@
       "name": "compiler-base",
       "hidden": true,
       "generator": "Ninja",
+      "environment": {
+        "PATH": "$penv{EDEV_LLVM_INSTLDIR}/bin;$penv{PATH}"
+      },
       "cacheVariables": {
-        "ZLIB_INCLUDE_DIR":      "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/include",
-        "ZLIB_LIBRARY_RELEASE":  "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/lib/zlib.lib",
-        "ZLIB_LIBRARY_DEBUG":    "${env:EDEV_VCPKGDIR}/installed/x64-windows-llvm/debug/lib/zlibd.lib",
+        "ZLIB_INCLUDE_DIR":      "$penv{EDEV_VCPKGDIR}/installed/x64-windows-llvm/include",
+        "ZLIB_LIBRARY_RELEASE":  "$penv{EDEV_VCPKGDIR}/installed/x64-windows-llvm/lib/zlib.lib",
+        "ZLIB_LIBRARY_DEBUG":    "$penv{EDEV_VCPKGDIR}/installed/x64-windows-llvm/debug/lib/zlibd.lib",
         "LLVM_TARGETS_TO_BUILD": "host;X86",
         "LLVM_LIT_TOOLS_DIR":    "C:/Program Files/Git/usr/bin",
         "MSVC_DIA_SDK_DIR":      "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/DIA SDK"
@@ -21,8 +24,8 @@
       "inherits": ["compiler-base"],
       "vendor": {
         "microsoft.com/VisualStudioSettings/CMake/1.0": {
-          "hostOS": [ "Windows" ],
-          "intelliSenseMode": "windows-clang-x64"
+          "intelliSenseMode": "windows-clang-x64",
+          "hostOS": [ "Windows" ]
         }
       },
       "architecture": {
@@ -30,35 +33,26 @@
         "strategy": "external"
        },
       "toolset": {
-        "value": "x64",
+        "value": "host=x64",
         "strategy": "external"
        },
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe",
-        "CMAKE_CXX_COMPILER": "${env:EDEV_LLVM_INSTLDIR}/bin/clang-cl.exe"
+        "CMAKE_C_COMPILER": "clang-cl",
+        "CMAKE_CXX_COMPILER": "clang-cl"
       }
     },
 
     {
-      "name": "bld-dbg",
-      "description": "Emit debug information",
-      "hidden": true,
-      "binaryDir": "${workspaceFolder}/build/dbg",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug", "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true }
+      "name": "bld-dbg", "description": "Debug build", "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/dbg"   , "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug"  , "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true                          }
     },
     {
-      "name": "bld-reldeb",
-      "description": "Release build with assertions and emit pdb",
-      "hidden": true,
-      "binaryDir": "${workspaceFolder}/build/reldeb",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true, "LLVM_ENABLE_PDB": true }
+      "name": "bld-reldeb", "description": "Release with assertions & pdb", "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/reldeb", "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true, "LLVM_ENABLE_ASSERTIONS": true, "LLVM_ENABLE_PDB": true }
     },
     {
-      "name": "bld-rel",
-      "description": "Release build",
-      "hidden": true,
-      "binaryDir": "${workspaceFolder}/build/rel",
-      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true }
+      "name": "bld-rel", "description": "Release build", "hidden": true,
+      "binaryDir": "${workspaceFolder}/build/rel"   , "cacheVariables": { "CMAKE_BUILD_TYPE": "Release", "LLVM_OPTIMIZED_TABLEGEN": true                                                          }
     },
 
     { "name": "proj-mlir",      "hidden": true, "cacheVariables": { "LLVM_ENABLE_PROJECTS": "mlir"                                                                                          } },
